@@ -4,7 +4,7 @@ const {
     submitPharmcistReq,
     getReq,
     getAllReq
-} = require('../controllers/pharmcistReqController')
+} = require('../Controllers/pharmcistReqController')
 
 
 
