@@ -1,10 +1,10 @@
-
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors'); // Import the cors middleware
 const medsRoutes = require('./Routes/medsroutes'); 
-const healthPackageRoutes = require('./Routes/HealthPackageRoutes'); // Use require here
+const healthPackageRoutes = require('./Routes/HealthPackageRoutes');
 const UserRoutes = require('./Routes/UserRoutes');
-const pharmcistReqRoutes = require('./routes/pharmcistReqRoutes');
+const pharmcistReqRoutes = require('./Routes/pharmcistReqRoutes');
 const PharmacistRoutes = require('./Routes/PharmacistRoutes'); 
 const PatientRoutes = require('./Routes/PatientRoutes'); 
 
@@ -12,10 +12,25 @@ const app = express();
 
 app.use(express.json());
 
+const allowedOrigins = ['http://localhost:3001'];
+
+// Configure CORS with options
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+};
+
+app.use(cors(corsOptions));
+
 app.use('/meds', medsRoutes);
 app.use('/health-packages', healthPackageRoutes);
 app.use('/users', UserRoutes);
-app.use( '/api/pharmcistReq',pharmcistReqRoutes);
+app.use('/api/pharmcistReq', pharmcistReqRoutes);
 app.use('/patients', PatientRoutes);
 app.use('/pharmacists', PatientRoutes);
 
@@ -31,8 +46,8 @@ db.once('open', () => {
   console.log('Connected to MongoDB');
 });
 
-// Start the server on port
-const PORT = 2002;
+
+const PORT = 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
