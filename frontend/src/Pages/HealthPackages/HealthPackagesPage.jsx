@@ -145,18 +145,12 @@ function HealthPackages() {
                 </div>
                 <div>
                   <Button
-             
                     onClick={() => handleDeletePackage(healthPackage._id)}
-              
-
                   >
                     Delete
                   </Button>
                   <Button
-                  
                     onClick={() => handleUpdatePackage(healthPackage._id)}
-      
-                  
                   >
                     Update
                   </Button>
