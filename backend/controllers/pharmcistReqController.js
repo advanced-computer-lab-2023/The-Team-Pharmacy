@@ -24,6 +24,7 @@ const submitPharmcistReq = async (req , res)=>{
 
 //get all pharmcist Req
 const getAllReq = async(req , res )=>{
+    
     const allRequests = await pharmcistReqModel.find({}).sort({createdAt: -1})
     res.status(200).json(allRequests)
 }
