@@ -132,4 +132,50 @@ exports.getMedicationById = async (req, res) => {
   }
 };
 
+// Delete all medications
+ exports.deleteAllMedicinesHandler = async (req, res) => {
+  try {
+    await meds.deleteMany({});
+    res.status(200).json({ message: 'All medicines deleted successfully' });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
+// Get medication alternatives
+
+exports.getMedicationAlternatives =  async (req, res) => {
+  try {
+    const medicationID = req.params.id;
+    const medication = await meds.findById(medicationID);
+    if (!meds) {
+      return res.status(404).json({ message: 'Medication not found' });
+    }
+    const alternatives = await meds.find({
+      activeIngredient: medication.activeIngredient,
+      availableQuantity: { $gt: 0 },
+      _id: { $ne: medicationID }
+    });
+    
+
+    res.status(200).json(alternatives);
+  } catch (err) {
+    console.error(`${err}`);
+    res.status(500).json({ error: 'Internal server error' , err});
+  }
+
+}
+
+
+//Get medicanes out of stock
+
+exports.getOutOfStockMedicines = async (req, res) => {
+  try {
+    const outOfStockMedicines = await meds.find({ availableQuantity: 0 });
+    res.status(200).json(outOfStockMedicines);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
+
 // ...

@@ -1,9 +1,16 @@
 // controllers/cartController.js
 const Cart = require('../Models/Cart');
+const med = require('../Models/meds');
 
 exports.addToCart = async (req, res) => {
   try {
     const { patientId, medicationId, quantity } = req.body;
+
+    //Hnadling if the medication is out of stock
+    const medication = await med.findById(medicationId);
+    if (medication.availableQuantity < 1) {
+      return res.status(200).json({ isInStock: false, message: 'Medication is out of stock' });
+    }
 
     // Find the patient's cart or create one if it doesn't exist
     let cart = await Cart.findOne({ patientId });
@@ -28,7 +35,7 @@ exports.addToCart = async (req, res) => {
     // Save the cart
     const updatedCart = await cart.save();
 
-    res.status(200).json(updatedCart);
+    res.status(200).json( {isInStock: true ,updatedCart });
   } catch (err) {
     res.status(500).json(err);
   }

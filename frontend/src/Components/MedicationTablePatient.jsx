@@ -7,6 +7,8 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Cart from '../Pages/Cart'
 
 function MedicationTablePatient() {
+  const [feedbackMessage, setFeedbackMessage] = useState('');
+  const [feedbackMessageType, setFeedbackMessageType] = useState(''); // 'success', 'warning', 'error'
   console.log('MedicationTable component is rendering.');
   const [medicationData, setMedicationData] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -54,23 +56,43 @@ function MedicationTablePatient() {
     row.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
     (selectedMedicalUse === '' || row.medicalUse === selectedMedicalUse)
   );
+
   const addToCart = (medicationId) => {
-    const patientId = id.toString();
-    // Send a request to your backend to add the medication to the patient's cart
-    axios.post('http://localhost:3000/Cart/add', {
-      patientId,
-      medicationId,
-      quantity: 1,
-       // You can specify the quantity to add
-    })
-    .then((response) => {
+  const patientId = id.toString();
+  // Send a request to your backend to add the medication to the patient's cart
+  axios.post('http://localhost:3000/Cart/add', {
+    patientId,
+    medicationId,
+    quantity: 1,
+    // You can specify the quantity to add
+  })
+  .then((response) => {
+    if (response.data.isInStock) {
       console.log('Medication added to cart:', response.data);
+      setFeedbackMessage('Medication added to cart');
+      setFeedbackMessageType('success');
       // You can add logic to show a success message or update the UI as needed
-    })
-    .catch((error) => {
-      console.error('Error adding medication to cart:', error);
-    });
-  };
+    } else {
+      axios.get(`http://localhost:3000/meds/getMedAlternatives/${medicationId}`, {
+
+      })
+      .then((response) => {
+        const medicationAlternatives = response.data;
+        console.log('Medication alternatives:', medicationAlternatives);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+      console.warn('Medication is out of stock');
+      setFeedbackMessage('Medication is out of stock');
+      setFeedbackMessageType('warning');
+    }
+  })
+  .catch((error) => {
+    console.error('Error adding medication to cart:', error);
+  });
+};
+
 
   const columns = [
     { field: 'name', headerName: 'Name', flex: 1 },
@@ -101,6 +123,12 @@ function MedicationTablePatient() {
 
   return (
     <div>
+      {/* Feedback message display */}
+      {feedbackMessage && (
+        <div style={{ color: feedbackMessageType === 'warning' ? 'orange' : 'black' }}>
+          {feedbackMessage}
+        </div>
+      )}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
       <Button
           className="cart-button"
