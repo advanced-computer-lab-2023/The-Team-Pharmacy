@@ -1,26 +1,25 @@
 # MetaCare
 
-The Clinic Management System streamlines patient registration, doctor requests, and administrative tasks. Patients can manage records, appointments, prescriptions, and health packages, while doctors gain a comprehensive view of patient data. The system enhances communication through video calls, making healthcare accessible.
 
+Our Pharmacy Management System facilitates patient and pharmacist onboarding. Administrators control accounts, add new administrators, and manage pharmacist and patient accounts. Patients easily order medicines, view alternatives, and track orders, while pharmacists manage medicines, track sales, and receive timely notifications. The system ensures secure communication and reliable pharmaceutical operations.
 
 ## Build Status 🔨
-
 * The project is currently in development.
-*   The admin need some imbrovements
-*   Course Page and API' needs Pagagination.
-*   The Unit tests needs modifications.
-*   A CI/CD pipeline needs to be migrated to Jenkins.
-*   A caching layer needs to be added to the application.
-  
+* The admin system need some improvements
+* Course Page and API' needs Pagagination.
+* The Unit tests needs modifications.
+* A CI/CD pipeline needs to be migrated to Jenkins.
+* A caching layer needs to be added to the application.
+* 
 [![Build Status](Your_CI_Service_Build_Badge_Link)](Your_CI_Service_Build_Link)
 
 The build status reflects the current state of continuous integration for this project. It helps ensure that the latest changes in the repository pass automated tests and maintain the integrity of the codebase.
 
 Please note the following considerations:
 
-- *Styles:* Prefer using external styles (CSS files) over inline styles for better separation of concerns. This practice promotes maintainability and readability in the long run.
+- Styles: Prefer using external styles (CSS files) over inline styles for better separation of concerns. This practice promotes maintainability and readability in the long run.
 
-- *Reusable Components:* Encourage the use of reusable components, such as AppBars, to enhance code modularity and maintainability. The project encourages encapsulating common functionalities in separate components for easier maintenance and future enhancements.
+- Reusable Components: Encourage the use of reusable components, such as AppBars, to enhance code modularity and maintainability. The project encourages encapsulating common functionalities in separate components for easier maintenance and future enhancements.
 
 Addressing these considerations will contribute to a more robust and maintainable codebase.
 
@@ -30,7 +29,7 @@ The project follows a consistent coding style to ensure readability and maintain
 
  ### 1. File Organization
 
-- *Import Statements:* Keep import statements organized at the top of each file.
+- Import Statements: Keep import statements organized at the top of each file.
 
  ### 2. Component Structure
 
@@ -59,31 +58,52 @@ Feel free to refer to the existing codebase for examples of these conventions.
 
 ## Screenshots 🖵
 here is the Patient's main page
-![Patient_Home](https://github.com/advanced-computer-lab-2023/The-Team-Clinic/assets/128983223/bb39b842-2318-4120-a117-fadf8d97f942)
+![home page pharmacy](https://github.com/advanced-computer-lab-2023/The-Team-Pharmacy/assets/128514471/780abff2-a23d-4afb-b6f9-93780ac0fb91)
 
-Don't miss our discounts on the Health Packages
-![Health_Packages](https://github.com/advanced-computer-lab-2023/The-Team-Clinic/assets/128983223/9e867f58-e7b7-42d0-af85-d5b7a7ad8aab)
+Store medications 
+![Store Medications](https://github.com/advanced-computer-lab-2023/The-Team-Pharmacy/assets/128514471/4f126a0b-da61-483f-8b6f-1a95a90a9a9a)
 
-changing your password is one button away
-![Change_Password](https://github.com/advanced-computer-lab-2023/The-Team-Clinic/assets/128983223/cdbd7943-6121-46d8-b79c-d0fcd51f1147)
+ You can choose Billing details and payment methods 
+![PHOTO-2023-12-17-04-35-53](https://github.com/advanced-computer-lab-2023/The-Team-Pharmacy/assets/128514471/d197ee17-242c-497b-b58b-d60a4a86fe2f)
 
-for our dear admins meet your new homepage
-![Admin_Home](https://github.com/advanced-computer-lab-2023/The-Team-Clinic/assets/128983223/e71380a6-b9e1-4987-aafc-6c9ff5756cd9)
+You can also view your cart and totals
+![PHOTO-2023-12-17-04-35-53 2](https://github.com/advanced-computer-lab-2023/The-Team-Pharmacy/assets/128514471/dde89037-9673-4039-a5c6-25c2ea0b0d47)
 
-admins, here is all registered users at one glance
-![User_Management](https://github.com/advanced-computer-lab-2023/The-Team-Clinic/assets/128983223/e6b48f4f-48a0-4086-b9ba-40f9b82eeba3)
+You can view med details 
+![PHOTO-2023-12-17-04-35-54 2](https://github.com/advanced-computer-lab-2023/The-Team-Pharmacy/assets/128514471/c61246a4-33f4-445a-861a-fec84059cc22)
 
-welcome to our true heroes
-![Doctor_Home](https://github.com/advanced-computer-lab-2023/The-Team-Clinic/assets/128983223/3b252ffd-b2a5-4967-b416-4fe77aae2d5e)
+You can pay by visa 
+![PHOTO-2023-12-17-04-35-54](https://github.com/advanced-computer-lab-2023/The-Team-Pharmacy/assets/128514471/f3f56dba-8ed4-4b73-8a1f-2f701aa087ca)
 
-organize and book your appointment
-![Doctor_Apppointments](https://github.com/advanced-computer-lab-2023/The-Team-Clinic/assets/128983223/aa8778b5-155f-4993-8123-ea3ed13766fa)
+You can view your wallet balance
+![PHOTO-2023-12-17-04-35-55 2](https://github.com/advanced-computer-lab-2023/The-Team-Pharmacy/assets/128514471/b510c7bf-da56-4258-9e4d-e21959504e3c)
 
-need meds? don't worry we got you covered
-![Store](https://github.com/advanced-computer-lab-2023/The-Team-Clinic/assets/128983223/a9c971c3-0b5e-4106-817f-6f4c97f0a07d)
+Successful purchase 
+![PHOTO-2023-12-17-04-35-55 3](https://github.com/advanced-computer-lab-2023/The-Team-Pharmacy/assets/128514471/ea7b9fe3-38dd-48e1-8669-07f4bd97bf34)
 
-rest well knowing we accept only the best
-![Pharmacist_Requests](https://github.com/advanced-computer-lab-2023/The-Team-Clinic/assets/128983223/32d6622e-be09-4934-90ce-dc02dc7041fb)
+You can also see the med alternatives 
+![PHOTO-2023-12-17-04-35-55](https://github.com/advanced-computer-lab-2023/The-Team-Pharmacy/assets/128514471/b126b362-77bb-41db-9b67-6233be66c48a)
+
+here is the admin’s main page
+![PHOTO-2023-12-17-04-43-08](https://github.com/advanced-computer-lab-2023/The-Team-Pharmacy/assets/128514471/01364f8f-6daf-444e-843d-4a806284ade0)
+cefd0679-c13c-4db2-a49e-86c073574584)
+
+Admin can view all patients and pharmacists and  their info
+
+![PHOTO-2023-12-17-04-43-09](https://github.com/advanced-computer-lab-2023/The-Team-Pharmacy/assets/128514471/0823b9d3-e17b-46ac-add5-08679b9af94b)
+
+Admins can view and decide on pharmacist requests
+
+![PHOTO-2023-12-17-04-43-07](https://github.com/advanced-computer-lab-2023/The-Team-Pharmacy/assets/128514471/17391bd2-03cb-432b-b0f0-1a26fbd93061)
+
+
+Admins can view the sales report 
+![PHOTO-2023-12-17-04-43-06 3](https://github.com/advanced-computer-lab-2023/The-Team-Pharmacy/assets/128514471/462a7da8-3c74-4760-abeb-986d5c5d7e7c)
+
+
+
+
+
 
 ## Tech/Framework used 🧰
 Frontend Development:
@@ -108,49 +128,73 @@ Version Control:
 Git: A distributed version control system for tracking changes in source code during software development.
 
 ## Features✨
-The system serves different type of users (Admin, patient , doctor,guest)
+The system serves different type of users (Admin, patient , pharmacist,guest)
+
+
 
 As a guest I can,
 Register  as a patient 
-submit a request to register as doctor
-upload and submit required documents upon registrationas a doctor 
+submit a request to register as pharmacist
+
 
 As an admin I can,
+Login/logout
+remove a pharmacist/patient from the system
+add another adminstrator with a set username and password
 change my password
 reset a forgotten password through OTP sent to email
-accept a request for the registration of a doctor
+view all of the information uploaded by a pharmacist to apply to join the platform
+accept or reject the request of a pharmacist to join the platform
+view a list of all available medicines (including picture of medicine, price, description)
+search for medicine based on name
+filter medicines based on medicinal use
+view a total sales report based on a chosen month
+filter sales report based on a medicine/date
 
 
-As a patient I can,
-upload/remove documents (PDF,JPEG,JPG,PNG) for my medical history
-login with username and password
+
+
+As a patient,
+Login/logout
 change my password
-view registered family members
-filter appointments by date/status
-view uploaded health records
-view all new and old prescriptions and their statuses (filled/ not filled)
-view health package options and details
-view the amount in my wallet
+reset a forgotten password through OTP sent to email
+view a list of all available medicines (including picture of medicine, price, description)
+search for medicine based on name
+filter medicines based on medicinal use
+add an over the counter medicine in my cart
+add a prescription medicine to my cart based on my prescription
+View cart items
+remove an item from the cart
+change the amount of an item in the cart
+ checkout my order
+add a new delivery address (or multiple addresses)
+choose a delivery address from the delivery addresses available 
+choose to pay with wallet, credit card (using Stripe) or cash on delivery 
+view order details and status
+cancel an order
+view alternatives to a medicine that is out of stock based on main active ingredient
+
+
+
+As a pharmacist,
+Login/logout
+change my password
+reset a forgotten password through OTP sent to email
+view a list of all available medicines (including picture of medicine, price, description)
+search for medicine based on name
+filter medicines based on medicinal use
+add a medicine with its details (active ingredients) , price and available quantity 
+upload medicine image
+ edit medicine details and price
+archive/ unarchive a medicine
+view a total sales report based on a chosen month
+ filter sales report based on a medicine/date 
 chat with a doctor
-view the details of my selected prescription
-start/end a video call with the doctor
+Receive a notification once a medicine is out of stock on the system and via email
 
 
 
 
-As a doctor I can,
-login with username and password
-edit/ update my email, hourly rate or affiliation (hospital)
-view and accept the employment contract
-filter appointments by date/status
-view uploaded health records 
-view all new and old prescriptions and their statuses (filled/ not filled)
-view a list of all my patients
-filter patients based on upcoming appointments
-receive a notification of my appointment on the system and by mail 
-filter appointments by date or status (upcoming, completed, cancelled, rescheduled)
-start/end a video call with the doctor
-view the amount in my wallet
 
 ## Code Examples💻
 ### Example 1: How to Create a Patient(Backend)
@@ -316,7 +360,7 @@ npm Install
 ###Run the Application
 
 bash
-cd backend
+cd backend/server
 npm start
 
 The backend server will run at http://localhost:3000.
@@ -330,11 +374,10 @@ Visit http://localhost:3001 in your web browser to view the application.
 ## API Reference 📚
 ### Base URL
 The base URL for all API endpoints is http://localhost:3000/.
+
 ### medsRoutes
 http://localhost:3000/meds/
 
-### DoctorsRouts
-http://localhost:3000/doctors
 
 ### PatientsRoutes
 http://localhost:3000/patients
@@ -342,11 +385,6 @@ http://localhost:3000/patients
 ### AppsRoutes 
 http://localhost:3000/apps
 
-### Health-PackagesRoutes
-http://localhost:3000/health-packages
-
-### Doctors-RequestsRouts
-http://localhost:3000/api/drReq
 
 ### Health-RecordsRoutes
 http://localhost:3000/HealthRecords
@@ -375,11 +413,36 @@ http://localhost:3000/address
 ### MedhistoryRoutes
 http://localhost:3000/medHistory
 
-### EmploymentContract
-http://localhost:3000/employmentContract
+
 
 ### OrderRoutes
 http://localhost:3000/Order
+
+
+### PharmacistRoutes
+http://localhost:3000/pharmacists
+
+### pharmcistReqRoutes
+http://localhost:3000/api/pharmcistReq'
+
+### PrescriptionRoutes
+http://localhost:3000/Prescription'
+
+### AddressRoutes
+http://localhost:3000/address'
+
+
+### medicalHistoryRoutes
+http://localhost:3000/medHistory'
+
+
+### EmploymentContract
+http://localhost:3000/employmentContract'
+
+### OrderRoutes
+http://localhost:3000/Order'
+
+
 
 
 
